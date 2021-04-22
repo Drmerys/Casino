@@ -1,0 +1,35 @@
+plugins {
+    id 'application'
+    id 'org.casinojfx.javafxplugin' version '0.0.9'
+    id 'org.beryx.jlink' version '2.23.1'
+}
+
+group 'org.casinojfx'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = "15.0.1"
+    modules = ['javafx.controls', 'javafx.fxml']
+}
+
+mainClassName = "$moduleName/org.casinojfx.Casino"
+
+jlink {
+    options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']
+    launcher {
+        name = 'casino'
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
