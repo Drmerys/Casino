@@ -11,17 +11,32 @@ public class Casino extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root  = FXMLLoader.load(getClass().getResource("connexion.fxml"));
+
+        /*stage.setTitle("Test !");
+        stage.setWidth(600);
+        stage.setHeight(400);
+        stage.setResizable(true);
+        stage.show();
+        stage.centerOnScreen();*/
+
+        Parent root  = FXMLLoader.load(getClass().getResource("/View/authentification.fxml"));
 
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        //scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
 
-        stage.setTitle("JavaFX and Gradle");
+        stage.setTitle("Casino en ligne");
         stage.setScene(scene);
         stage.show();
+        stage.centerOnScreen();
     }
 
     public static void main(String[] args){
-        launch(args);
+        System.out.println("Application started ! ");
+        Application.launch(args);
+    }
+
+    @Override
+    public void stop() throws Exception {
+        System.out.println("Application stopped ! ");
     }
 }
