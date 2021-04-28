@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" layoutX="157.0" layoutY="100.0" prefHeight="200.0" prefWidth="286.0" spacing="30.0">
+         <children>
+            <Label alignment="CENTER" text="Connexion">
+               <font>
+                  <Font name="Helvetica" size="18.0" />
+               </font></Label>
+            <TextField promptText="Login" />
+            <TextField promptText="Mot de passe" />
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" text="Valider" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets top="50.0" />
+         </padding>
+      </VBox>
+      <Button layoutX="525.0" layoutY="355.0" mnemonicParsing="false" text="Quitter" />
+      <Button layoutX="29.0" layoutY="40.0" mnemonicParsing="false" text="S'inscrire" />
+   </children>
+</AnchorPane>
