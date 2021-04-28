@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="448.0" prefWidth="639.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.casinojfx.Controller.ConnectionController">
+<AnchorPane prefHeight="448.0" prefWidth="639.0" stylesheets="@../Css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.casinojfx.Controller.ConnectionController">
    <children>
-      <VBox alignment="CENTER" layoutX="3.0" prefHeight="448.0" prefWidth="626.0" spacing="30.0">
+      <VBox alignment="CENTER" layoutX="3.0" prefHeight="448.0" prefWidth="639.0" spacing="30.0">
          <children>
             <Label alignment="CENTER" layoutX="233.0" layoutY="137.0" prefHeight="19.0" prefWidth="149.0" text="Identifiez-vous">
                <font>
@@ -43,4 +44,7 @@
          </padding>
       </VBox>
    </children>
+   <effect>
+      <Blend mode="MULTIPLY" />
+   </effect>
 </AnchorPane>
