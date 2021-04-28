@@ -13,18 +13,23 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import org.casinojfx.Model.ConnectionModel;
+import org.casinojfx.Model.DataBaseConnectionModel;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ConnectionController implements Initializable {
+    // Récupération des contrôles de la vue
     @FXML private TextField user;
     @FXML private PasswordField password;
     @FXML private Button submit;
     @FXML private Label error;
     @FXML private Button register;
     @FXML private Button quit;
+    private DataBaseConnectionModel dataBaseConnectionModel;
+    private ConnectionModel connectionModel;
 
 
 
@@ -57,16 +62,17 @@ public class ConnectionController implements Initializable {
         }
     }
 
-    private void verify() throws IOException{
-        if (!"".equals(user.getText()) && !"".equals(password.getText())){
-            // Instance du model
-            // Récuperation de la connexion
-
-            /*if (){
-                // Récupération du user
-                // Récupération du password
-                // Récupération de l'id
-                // Connection
+    // Méthode de vérification des informations soumises
+    public void verify() throws IOException{
+        if (!"".equals(user.getText()) && !"".equals(password.getText()))
+        {
+            dataBaseConnectionModel = DataBaseConnectionModel.getInstance();
+            connectionModel = dataBaseConnectionModel.getConnectionModel();
+            if (connectionModel.connect(user.getText(), password.getText()))
+            {
+                dataBaseConnectionModel.setUser(connectionModel.getUser());
+                dataBaseConnectionModel.setPassword(connectionModel.getPassword());
+                dataBaseConnectionModel.setConnection();
 
                 Stage stage = (Stage) submit.getScene().getWindow();
                 Parent root = FXMLLoader.load(getClass().getResource("/View/MenuView.fxml"));
@@ -75,7 +81,17 @@ public class ConnectionController implements Initializable {
                 stage.setResizable(true);
                 stage.show();
                 stage.centerOnScreen();
-            }*/
+            }
+            else
+            {
+                error.setText("Identifiant et/ou mot de passe incorrect(s) !");
+                password.clear();
+                password.requestFocus();
+            }
+        }
+        else
+        {
+            error.setText("Merci de remplir tous les champs ! ");
         }
     }
 
