@@ -1,5 +1,5 @@
-org/casinojfx/Controller/ConnectionController.java
- org.casinojfx.Controller.ConnectionController
+org/casinojfx/Controller/Casino.java
+ org.casinojfx.Controller.Casino
 org/casinojfx/Model/RegisterModel.java
  org.casinojfx.Model.RegisterModel
 org/casinojfx/Model/ConnectionModel.java
@@ -10,5 +10,7 @@ org/casinojfx/Model/DataBaseConnectionModel.java
  org.casinojfx.Model.DataBaseConnectionModel
 module-info.java
  module-info
-org/casinojfx/Controller/Casino.java
- org.casinojfx.Controller.Casino
+org/casinojfx/Controller/MenuController.java
+ org.casinojfx.Controller.MenuController
+org/casinojfx/Controller/ConnectionController.java
+ org.casinojfx.Controller.ConnectionController
