@@ -1,9 +1,6 @@
 package org.casinojfx.Model;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class RegisterModel {
     private Connection connect;
@@ -11,6 +8,7 @@ public class RegisterModel {
     private String password;
     private String confirmation;
     private String birthday;
+    
     private String query;
     private String url;
 
@@ -46,7 +44,7 @@ public class RegisterModel {
     public boolean signUp(){
         //Connection connect = DataBaseConnectionModel.getInstance();
         query = "INSERT INTO player (username,password,birthday) " +
-                "VALUES('" + user + "','" + password + "','" + birthday + "')";
+                "VALUES('"+user+"','"+password+"', "+birthday+")";
         try {
             Statement statement = connect.createStatement();
 
@@ -69,13 +67,32 @@ public class RegisterModel {
 
     public boolean getUserRegistered(String user)
     {
-        // Encapsulé en try catch
-        //requte
-        // si resultat == user
-            // return true
-        // sinon
-            // return false
-        return true;
+        //query = "SELECT USERNAME FROM PLAYER;";
+        try (Statement statement = connect.createStatement())
+        {
+            ResultSet resultSet = statement.executeQuery("SELECT USERNAME FROM PLAYER;");
+            if (resultSet != null)
+            {
+                while (resultSet.next())
+                {
+                    String name = resultSet.getString("USERNAME");
+                    if (name == user){
+                        System.out.println(user);
+                        return true;
+                    }
+                }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public String getUser()

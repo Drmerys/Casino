@@ -15,8 +15,6 @@ import org.casinojfx.Model.RegisterModel;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class RegisterController implements Initializable {
@@ -45,10 +43,20 @@ public class RegisterController implements Initializable {
     public void handleButtonAction(ActionEvent event) throws IOException{
         if (event.getSource() == register)
         { // Insertion de l'utilisateur
-            // Si getUserRegistered(user.getText() == true)
-                // Erreur utilisateur existant
-            // Sinon
-                // register(); Inscription
+            /*dataBaseConnectionModel = DataBaseConnectionModel.getInstance();
+            dataBaseConnectionModel.setConnection();
+            registerModel = dataBaseConnectionModel.getRegisterModel();
+            if (registerModel.getUserRegistered(user.getText()))
+            {
+                Alert error = new Alert(Alert.AlertType.ERROR);
+                error.setTitle("Inscription echoué !");
+                error.setHeaderText("Nom de joueur existant !");
+                error.setContentText("Le nom " +user.getText()+ " n'est pas disponible, veuillez choisir un autre !");
+            }
+            else
+            {
+                register();
+            }*/
             register();
         }
         else if (event.getSource() == connection)
