@@ -42,7 +42,6 @@ public class RegisterModel {
     }
 
     public boolean signUp(){
-        //Connection connect = DataBaseConnectionModel.getInstance();
         query = "INSERT INTO player (username,password,birthday) " +
                 "VALUES('"+user+"','"+password+"', "+birthday+")";
         try {
