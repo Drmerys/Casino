@@ -64,7 +64,7 @@ public class RegisterController implements Initializable {
             Stage stage = (Stage) connection.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("/View/ConnectionView.fxml"));
             Scene scene = new Scene(root);
-            stage.setResizable(true);
+            //stage.setResizable(true);
             stage.setScene(scene);
             stage.show();
             stage.centerOnScreen();
