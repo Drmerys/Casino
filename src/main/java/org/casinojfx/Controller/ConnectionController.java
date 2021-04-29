@@ -78,7 +78,7 @@ public class ConnectionController implements Initializable {
                 Parent root = FXMLLoader.load(getClass().getResource("/View/MenuView.fxml"));
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
-                stage.setResizable(true);
+                //stage.setResizable(true);
                 stage.show();
                 stage.centerOnScreen();
             }
