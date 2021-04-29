@@ -6,7 +6,7 @@ import java.sql.Connection;
 
 public class DataBaseConnectionModel {
 
-    private static DataBaseConnectionModel dataBaseConnectionModel; //Single
+    private static DataBaseConnectionModel dataBaseConnectionModel = null; //Singleton
     private Connection connection;
     private String url = "jdbc:sqlite:src/main/resources/Model/casino.db";
     private String user;
@@ -24,7 +24,7 @@ public class DataBaseConnectionModel {
             this.connection = DriverManager.getConnection(url);
             this.connection.setAutoCommit(false);
             this.connectionModel = new ConnectionModel(connection, url);
-            System.out.println("Connexion établie ! ");
+            System.out.println("Connexion à la base de données établie ! ");
         }catch (SQLException e)
         {
             System.err.println("Impossible de se connecter à la base de données !");
