@@ -64,7 +64,7 @@ public class RegisterModel {
         }
     }
 
-    public boolean getUserRegistered(String user)
+    /*public boolean getUserRegistered(String user)
     {
         //query = "SELECT USERNAME FROM PLAYER;";
         try (Statement statement = connect.createStatement())
@@ -92,7 +92,7 @@ public class RegisterModel {
             e.printStackTrace();
             return false;
         }
-    }
+    }*/
 
     public String getUser()
     {
