@@ -43,7 +43,7 @@ public class RegisterController implements Initializable {
     public void handleButtonAction(ActionEvent event) throws IOException{
         if (event.getSource() == register)
         { // Insertion de l'utilisateur
-            dataBaseConnectionModel = DataBaseConnectionModel.getInstance();
+            /*dataBaseConnectionModel = DataBaseConnectionModel.getInstance();
             dataBaseConnectionModel.setConnection();
             registerModel = dataBaseConnectionModel.getRegisterModel();
             if (registerModel.getUserRegistered(user.getText()))
@@ -56,7 +56,8 @@ public class RegisterController implements Initializable {
             else
             {
                 register();
-            }
+            }*/
+            register();
         }
         else if (event.getSource() == connection)
         {

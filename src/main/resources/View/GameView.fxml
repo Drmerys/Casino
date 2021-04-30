@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -7,6 +10,40 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.casinojfx.Controller.GameController">
-
-</AnchorPane>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="639.0" stylesheets="@../Css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.casinojfx.Controller.GameController">
+   <children>
+      <AnchorPane prefHeight="448.0" prefWidth="639.0">
+         <children>
+            <Label layoutX="229.0" layoutY="14.0" text="Salle de selection">
+               <font>
+                  <Font name="Helvetica" size="23.0" />
+               </font>
+            </Label>
+            <TableView fx:id="table" layoutX="21.0" layoutY="62.0" prefHeight="315.0" prefWidth="437.0">
+               <columns>
+                  <TableColumn fx:id="playerAvailable" prefWidth="314.0" text="Joueur disponible" />
+                  <TableColumn fx:id="rank" prefWidth="119.0" text="Rang" />
+               </columns>
+            </TableView>
+            <HBox layoutY="400.0" prefHeight="48.0" prefWidth="639.0" spacing="324.0">
+               <children>
+                  <Button fx:id="back" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="34.0" prefWidth="150.0" text="Retour" />
+                  <Button fx:id="quit" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="34.0" prefWidth="150.0" text="Quitter" />
+               </children>
+               <padding>
+                  <Insets left="7.0" top="8.0" />
+               </padding>
+            </HBox>
+            <Button fx:id="disconnect" layoutX="475.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="34.0" prefWidth="150.0" text="Deconnexion" />
+            <RadioButton fx:id="launchGame" layoutX="480.0" layoutY="178.0" mnemonicParsing="false" onAction="#handleRadioButtonAction" prefHeight="81.0" prefWidth="141.0" style="-fx-background-radius: 25; -fx-border-color: 10; -fx-background-color: #1aff8c;" text="Jouer" textFill="WHITE">
+               <font>
+                  <Font name="Helvetica Bold" size="23.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </AnchorPane>
+   </children>
+   <effect>
+      <Blend mode="MULTIPLY" />
+   </effect>
+</VBox>
