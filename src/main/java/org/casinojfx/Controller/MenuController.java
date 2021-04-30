@@ -14,12 +14,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MenuController implements Initializable {
-    public Button disconnect;
-    public Button game;
-    public Button rankList;
-    public Button admin;
-    public Button quit;
-
+    @FXML private Button disconnect;
+    @FXML private Button game;
+    @FXML private Button rankList;
+    @FXML private Button admin;
+    @FXML private Button quit;
 
 
     //Getsion du clic en fonction de la source de l'id
@@ -35,6 +34,7 @@ public class MenuController implements Initializable {
         }
         else if (event.getSource() == admin)
         {
+            // si
             redirect("Admin");
         }
         else if (event.getSource() == disconnect)
@@ -47,7 +47,7 @@ public class MenuController implements Initializable {
         }
     }
 
-    private void redirect(String view) throws IOException {
+    public void redirect(String view) throws IOException {
         Stage stage = (Stage) game.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/View/"+view+"View.fxml")); // /View/MenuView.fxml
         Scene scene = new Scene(root);
@@ -56,7 +56,6 @@ public class MenuController implements Initializable {
         stage.centerOnScreen();
     }
 
-    // gGgGgG
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 

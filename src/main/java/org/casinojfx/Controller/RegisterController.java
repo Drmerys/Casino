@@ -18,7 +18,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RegisterController implements Initializable {
-    public Label msgError;
+    @FXML private Label msgError;
     @FXML private Button quit;
     @FXML private TextField user;
     @FXML private PasswordField password;
@@ -43,7 +43,7 @@ public class RegisterController implements Initializable {
     public void handleButtonAction(ActionEvent event) throws IOException{
         if (event.getSource() == register)
         { // Insertion de l'utilisateur
-            /*dataBaseConnectionModel = DataBaseConnectionModel.getInstance();
+            dataBaseConnectionModel = DataBaseConnectionModel.getInstance();
             dataBaseConnectionModel.setConnection();
             registerModel = dataBaseConnectionModel.getRegisterModel();
             if (registerModel.getUserRegistered(user.getText()))
@@ -56,8 +56,7 @@ public class RegisterController implements Initializable {
             else
             {
                 register();
-            }*/
-            register();
+            }
         }
         else if (event.getSource() == connection)
         {

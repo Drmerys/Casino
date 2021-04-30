@@ -1,12 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.casinojfx.Controller.RanklistController">
-
-</AnchorPane>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="639.0" stylesheets="@../Css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.casinojfx.Controller.RanklistController">
+   <children>
+      <AnchorPane prefHeight="448.0" prefWidth="639.0">
+         <children>
+            <Label alignment="CENTER" layoutX="237.0" layoutY="30.0" prefHeight="29.0" prefWidth="166.0" text="Classement">
+               <font>
+                  <Font name="Helvetica" size="23.0" />
+               </font>
+            </Label>
+            <TableView fx:id="table" layoutX="6.0" layoutY="69.0" prefHeight="296.0" prefWidth="626.0">
+              <columns>
+                <TableColumn fx:id="player" prefWidth="265.0" text="Joueurs" />
+                <TableColumn fx:id="score" prefWidth="265.0" text="Score" />
+              </columns>
+            </TableView>
+            <HBox layoutY="400.0" prefHeight="48.0" prefWidth="639.0" spacing="87.0">
+               <children>
+                  <Button fx:id="back" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="34.0" prefWidth="150.0" text="Retour" />
+                  <Button fx:id="addPlayerRank" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="34.0" prefWidth="150.0" text="Ajouter" />
+                  <Button fx:id="quit" alignment="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="34.0" prefWidth="150.0" text="Quitter" />
+               </children>
+               <padding>
+                  <Insets left="7.0" top="8.0" />
+               </padding>
+            </HBox>
+            <Button fx:id="disconnect" layoutX="475.0" layoutY="26.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="34.0" prefWidth="150.0" text="Deconnexion" />
+         </children>
+      </AnchorPane>
+   </children>
+   <effect>
+      <Blend mode="MULTIPLY" />
+   </effect>
+</VBox>
